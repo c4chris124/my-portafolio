@@ -1,0 +1,41 @@
+@import '../../sass/variables.scss';
+
+.intro-container{
+    display: flex;
+    height: 100vh;
+}
+
+.intro-left{
+    flex: 1;
+
+    .intro-left-wrapper{
+        padding: 50px;
+    }
+}  
+
+.intro-right{
+    flex: 1;
+}      
+
+.intro-i{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.intro-name{
+    font-size: 60px;
+}
+
+.intro-title{
+    height: 50px;
+    overflow: hidden;
+}
+
+.intro-title-item{
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: $green;
+}
+
+// 14:32
