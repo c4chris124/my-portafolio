@@ -1,0 +1,73 @@
+@import "../../sass/variables.scss";
+
+.about-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-left {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-title {
+  font-weight: 400;
+}
+
+.about-sub {
+  margin: 20px 0px;
+}
+
+.about-desc {
+  font-weight: 300;
+}
+
+.about-card.bg {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: $primary;
+}
+
+.about-card {
+  width: 60%;
+  height: 70vh;
+  border-radius: 80px;
+  border: 1px solid red;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-award {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .about-award-img {
+    width: 200px;
+    border-radius: 10px;
+    outline: 1px solid #ffff00;
+  }
+
+  .about-award-texts {
+    width: 70%;
+
+    .about-award-title {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 10px;
+      }
+    
+  }
+}
+

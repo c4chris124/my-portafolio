@@ -1,6 +1,7 @@
 import React from "react";
 import { IconButton } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import imageP from '../../assets/exported1.png'
 import "./Intro.scss";
 
 const Intro = () => {
