@@ -7,8 +7,7 @@ export const useStyles = makeStyles({
     marginRight: "20px",
   },
   textFields: {
-    margin: "10px",
-    width: "50%",
+    width: "50%"
   },
   textArea: {
     margin: "10px",
