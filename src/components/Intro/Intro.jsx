@@ -1,9 +1,12 @@
 import React from "react";
 import { IconButton } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import imageP from '../../assets/exported1.png'
 import "./Intro.scss";
+import { useSelector } from "react-redux";
 
 const Intro = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode)
   return (
     <div className="intro-container">
       <div className="intro-left">
@@ -13,7 +16,7 @@ const Intro = () => {
           <div className="intro-title">
             <div className="intro-title-wrapper">
               <div className="intro-title-item">Web Developer</div>
-              <div className="intro-title-item">Content Creator</div>
+              <div className="intro-title-item">Fucker</div>
             </div>
           </div>
           <p className="intro-description">
@@ -28,17 +31,18 @@ const Intro = () => {
           }}
         >
           <ExpandMore
-            htmlColor="black"
             sx={{
               width: '50px',
-              height: '50px'
+              height: '50px',
+              color: darkMode ? 'white' : 'black',
+              animation: 'arrow 1s ease-in-out infinite alternate'
             }}
           />
         </IconButton>
       </div>
       <div className="intro-right">
         <div className="intro-bg"></div>
-        <img src="" alt="" className="intro-image" />
+        <img src={imageP} alt="" className="intro-image" />
       </div>
     </div>
   );
