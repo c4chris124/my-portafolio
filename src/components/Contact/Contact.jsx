@@ -1,5 +1,12 @@
 import React, { useRef, useState } from "react";
-import { TextField, Button, Alert, IconButton, Collapse } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Alert,
+  IconButton,
+  Collapse,
+  Paper,
+} from "@mui/material";
 import { LocalPhone, Email, Apartment, Send, Close } from "@mui/icons-material";
 import { useStyles } from "./styles";
 import emailjs from "@emailjs/browser";
@@ -10,12 +17,11 @@ const Contact = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
   const [open, setOpen] = useState(true);
-  const [input, setInput] = useState({})
+  const [input, setInput] = useState({});
 
-
-  const handleChange = (e) =>{
-    setInput({...input, [e.target.name]: e.target.value})
-  }
+  const handleChange = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,15 +50,15 @@ const Contact = () => {
           <h1 className="c-title">Let's discus your projects</h1>
           <div className="c-info">
             <div className="c-info-item">
-              <LocalPhone className={classes.root} />
+              <LocalPhone className={classes.items} />
               +502 31553614
             </div>
             <div className="c-info-item">
-              <Email className={classes.root} />
+              <Email className={classes.items} />
               c4chris124@gmail.com
             </div>
             <div className="c-info-item">
-              <Apartment className={classes.root} />
+              <Apartment className={classes.items} />
               Guatemala city, Guatemala
             </div>
           </div>
@@ -62,35 +68,37 @@ const Contact = () => {
             <b>What's your story</b> Get in touch. Always freelancing if the
             right project comes along.
           </p>
-
           <form ref={formRef} onSubmit={handleSubmit}>
             <TextField
-              className={classes.textFields}
+              className={classes.textField}
               label="Name"
               variant="outlined"
               name="user_name"
               onChange={handleChange}
               error={input.user_name ? false : true}
+              sx={{ margin: "10px" }}
             />
             <TextField
-              className={classes.textFields}
+              className={classes.textField}
               label="Subject"
               variant="outlined"
               name="user_subject"
               onChange={handleChange}
               error={input.user_subject ? false : true}
+              sx={{ margin: "10px" }}
             />
             <TextField
-              className={classes.textFields}
+              className={classes.textField}
               label="Email"
               variant="outlined"
               name="user_email"
               onChange={handleChange}
               error={input.user_email ? false : true}
+              sx={{ margin: "10px" }}
             />
 
             <TextField
-              className={classes.textArea}
+              className={classes.textField}
               fullWidth
               label="Message"
               multiline
@@ -98,6 +106,7 @@ const Contact = () => {
               name="message"
               onChange={handleChange}
               error={input.message ? false : true}
+              sx={{ margin: "10px" }}
             />
 
             <Button
@@ -107,6 +116,7 @@ const Contact = () => {
               startIcon={<Send />}
               type="submit"
               disabled={Object.keys(input).length == 4 ? false : true}
+              sx={{ margin: "10px" }}
             >
               Send
             </Button>
