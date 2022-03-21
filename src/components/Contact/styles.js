@@ -1,19 +1,18 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/styles"
 
 export const useStyles = makeStyles({
-  root: {
+  items: {
     width: "30px",
     height: "30px",
     marginRight: "20px",
   },
-  textFields: {
-    width: "50%"
+  textField: {
+    width: '50%'
   },
   textArea: {
-    margin: "10px",
+    margin: "1rem",
   },
   button: {
-    margin: "10px",
     width: "100px",
   },
 });
