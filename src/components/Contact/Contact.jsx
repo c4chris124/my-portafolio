@@ -1,14 +1,8 @@
 import React, { useRef, useState } from "react";
-import {
-  TextField,
-  Button,
-  Alert,
-  IconButton,
-  Collapse,
-  Paper,
-} from "@mui/material";
+import { Alert, IconButton, Collapse } from "@mui/material";
 import { LocalPhone, Email, Apartment, Send, Close } from "@mui/icons-material";
 import { useStyles } from "./styles";
+import { useSelector } from "react-redux";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
 
@@ -18,6 +12,7 @@ const Contact = () => {
   const [done, setDone] = useState(false);
   const [open, setOpen] = useState(true);
   const [input, setInput] = useState({});
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -69,57 +64,58 @@ const Contact = () => {
             right project comes along.
           </p>
           <form ref={formRef} onSubmit={handleSubmit}>
-            <TextField
-              className={classes.textField}
-              label="Name"
-              variant="outlined"
-              name="user_name"
-              onChange={handleChange}
-              error={input.user_name ? false : true}
-              sx={{ margin: "10px" }}
-            />
-            <TextField
-              className={classes.textField}
-              label="Subject"
-              variant="outlined"
-              name="user_subject"
-              onChange={handleChange}
-              error={input.user_subject ? false : true}
-              sx={{ margin: "10px" }}
-            />
-            <TextField
-              className={classes.textField}
-              label="Email"
-              variant="outlined"
-              name="user_email"
-              onChange={handleChange}
-              error={input.user_email ? false : true}
-              sx={{ margin: "10px" }}
-            />
+            <div className="form_field_group field">
+              <input
+                className={`text_field ${darkMode && "black"}`}
+                type="text"
+                name="user_name"
+                onChange={handleChange}
+              />
+              <label htmlFor="" className="label_field">
+                Name
+              </label>
+            </div>
 
-            <TextField
-              className={classes.textField}
-              fullWidth
-              label="Message"
-              multiline
-              rows={5}
-              name="message"
-              onChange={handleChange}
-              error={input.message ? false : true}
-              sx={{ margin: "10px" }}
-            />
+            <div className="form_field_group field">
+              <input
+                className={`text_field ${darkMode && "black"}`}
+                type="text"
+                name="user_subject"
+                onChange={handleChange}
+              />
+              <label htmlFor="" className="label_field">
+                Subject
+              </label>
+            </div>
 
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="success"
-              startIcon={<Send />}
-              type="submit"
-              disabled={Object.keys(input).length == 4 ? false : true}
-              sx={{ margin: "10px" }}
-            >
+            <div className="form_field_group field">
+              <input
+                className={`text_field ${darkMode && "black"}`}
+                type="text"
+                name="user_email"
+                onChange={handleChange}
+              />
+              <label htmlFor="" className="label_field">
+                Email
+              </label>
+            </div>
+
+            <div className="form_field_group field">
+              <textarea
+                className={`text_field ${darkMode && "black"} textarea`}
+                type="text"
+                name="message"
+                onChange={handleChange}
+              />
+              <label htmlFor="" className="label_field">
+                Message
+              </label>
+            </div>
+
+            <button className={`form_button ${darkMode && 'darkBtn'}`}>
               Send
-            </Button>
+              <Send />
+            </button>
             {done ? (
               <Collapse in={open}>
                 <Alert
@@ -130,6 +126,7 @@ const Contact = () => {
                       size="small"
                       onClick={() => {
                         setOpen(false);
+                        setInput({});
                       }}
                     >
                       <Close fontSize="inherit" />
