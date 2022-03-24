@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import { TextField, Button, Alert, IconButton, Collapse } from "@mui/material";
-import { styled } from "@mui/styles";
+import { Alert, IconButton, Collapse } from "@mui/material";
 import { LocalPhone, Email, Apartment, Send, Close } from "@mui/icons-material";
 import { useStyles } from "./styles";
 import { useSelector } from "react-redux";
@@ -67,7 +66,7 @@ const Contact = () => {
           <form ref={formRef} onSubmit={handleSubmit}>
             <div className="form_field_group field">
               <input
-                className={`text_field ${darkMode && 'black'}`}
+                className={`text_field ${darkMode && "black"}`}
                 type="text"
                 name="user_name"
                 onChange={handleChange}
@@ -79,7 +78,7 @@ const Contact = () => {
 
             <div className="form_field_group field">
               <input
-                className={`text_field ${darkMode && 'black'}`}
+                className={`text_field ${darkMode && "black"}`}
                 type="text"
                 name="user_subject"
                 onChange={handleChange}
@@ -91,7 +90,7 @@ const Contact = () => {
 
             <div className="form_field_group field">
               <input
-                className={`text_field ${darkMode && 'black'}`}
+                className={`text_field ${darkMode && "black"}`}
                 type="text"
                 name="user_email"
                 onChange={handleChange}
@@ -103,7 +102,7 @@ const Contact = () => {
 
             <div className="form_field_group field">
               <textarea
-                className={`text_field ${darkMode && 'black'} textarea`}
+                className={`text_field ${darkMode && "black"} textarea`}
                 type="text"
                 name="message"
                 onChange={handleChange}
@@ -113,16 +112,10 @@ const Contact = () => {
               </label>
             </div>
 
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="success"
-              startIcon={<Send />}
-              type="submit"
-              sx={{ marginTop:'30px' }}
-            >
+            <button className={`form_button ${darkMode && 'darkBtn'}`}>
               Send
-            </Button>
+              <Send />
+            </button>
             {done ? (
               <Collapse in={open}>
                 <Alert
@@ -133,7 +126,7 @@ const Contact = () => {
                       size="small"
                       onClick={() => {
                         setOpen(false);
-                        setInput({})
+                        setInput({});
                       }}
                     >
                       <Close fontSize="inherit" />
