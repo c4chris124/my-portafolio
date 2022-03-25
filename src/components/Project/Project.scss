@@ -6,7 +6,9 @@
     margin: 20px 10px;
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
-
+    box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+    -moz-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
 
     &.pc-dark{
         outline: 1px solid rgb(218, 218, 218);

@@ -36,6 +36,9 @@
   top: 50px;
   left: 50px;
   background-color: $primary;
+  box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+  -moz-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
 }
 
 .about-card {
