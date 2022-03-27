@@ -6,10 +6,15 @@
     margin: 20px 10px;
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
-
+    box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+    -moz-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
 
     &.pc-dark{
-        outline: 1px solid rgb(218, 218, 218);
+        // outline: 1px solid rgb(218, 218, 218);
+        box-shadow: 0 -2px 50px rgba(0, 0, 0, 1);;
+        -webkit-box-shadow: 0 -2px 50px  rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 -2px 50px rgba(0, 0, 0, 1);
     }
 
 }
@@ -18,7 +23,7 @@
 
 .p-browser{
     height: 20px;
-    background-color: $BMonoP;
+    background-color: $secondary;
     display: flex;
     align-items: center;
     position: sticky;
@@ -47,4 +52,14 @@
 
 .project-container:hover .p-img{
     transform: translateY(-60%);
+}
+
+@media screen and (max-width:480px) {
+    .project-container{
+        width: 40%;
+        height: 20vh;
+        box-shadow: 1px 5px 11px 2px rgba(0,0,0,0.48);
+        -webkit-box-shadow: 1px 5px 11px 2px rgba(0,0,0,0.48);
+        -moz-box-shadow: 1px 5px 11px 2px rgba(0,0,0,0.48);
+    }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import "./About.scss";
 import awardimg from '../../assets/Certifcado Henry-1.png'
+import {useSelector} from 'react-redux'
 
 const About = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode)
   return (
     <div className="about-container">
       <div className="about-left">
-        <div className="about-card bg"></div>
+        <div className={`about-card bg ${darkMode && 'bg-dark'}`}></div>
         <div className="about-card">
-          <img src="" alt="" className="about-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/traveladvisor-343201.appspot.com/o/11f5c80b-1251-49c9-ad4f-ab89b193cf17.jpg?alt=media&token=e3bc581a-610f-4520-84b5-c64c7d819e51" alt="" className="about-image" />
         </div>
       </div>
       <div className="about-right">

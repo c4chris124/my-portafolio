@@ -36,14 +36,16 @@ const Intro = () => {
               height: '50px',
               color: darkMode ? 'white' : 'black',
               animation: 'arrow 1s ease-in-out infinite alternate',
-              cursor: 'auto'
+              cursor: 'auto',
             }}
           />
         </IconButton>
       </div>
       <div className="intro-right">
+        <span className="intro-bg-wrap">
         <div className="intro-bg"></div>
-        <img src="" alt="" className="intro-image" />
+        </span>
+        <img src={imageP} alt="" className="intro-image" />
       </div>
     </div>
   );

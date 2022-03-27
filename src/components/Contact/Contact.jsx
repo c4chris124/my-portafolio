@@ -5,17 +5,30 @@ import { useStyles } from "./styles";
 import { useSelector } from "react-redux";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
+import { validate } from "./validation";
 
 const Contact = () => {
   const classes = useStyles();
   const formRef = useRef();
   const [done, setDone] = useState(false);
   const [open, setOpen] = useState(true);
-  const [input, setInput] = useState({});
+  const [errors, setErrors] = useState({});
   const darkMode = useSelector((state) => state.theme.darkMode);
+  const [input, setInput] = useState({
+    user_name: "",
+    user_subject: "",
+    user_email: "",
+    message: "",
+  });
+
+  
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const handleBlurError = (e) => {
+    setErrors(validate(input));
   };
 
   const handleSubmit = (e) => {
@@ -35,6 +48,13 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+  };
+
+  const checkProperties = (obj) => {
+    for (var key in obj) {
+      if (obj[key] !== null && obj[key] != "") return false;
+    }
+    return true;
   };
 
   return (
@@ -70,10 +90,15 @@ const Contact = () => {
                 type="text"
                 name="user_name"
                 onChange={handleChange}
+                onBlur={handleBlurError}
+                value={input.user_name}
               />
               <label htmlFor="" className="label_field">
                 Name
               </label>
+              {errors.user_name ? (
+                <p className="field_error">{errors.user_name}</p>
+              ) : null}
             </div>
 
             <div className="form_field_group field">
@@ -82,10 +107,15 @@ const Contact = () => {
                 type="text"
                 name="user_subject"
                 onChange={handleChange}
+                onBlur={handleBlurError}
+                value={input.user_subject}
               />
               <label htmlFor="" className="label_field">
                 Subject
               </label>
+              {errors.user_subject ? (
+                <p className="field_error">{errors.user_subject}</p>
+              ) : null}
             </div>
 
             <div className="form_field_group field">
@@ -94,10 +124,15 @@ const Contact = () => {
                 type="text"
                 name="user_email"
                 onChange={handleChange}
+                onBlur={handleBlurError}
+                value={input.user_email}
               />
               <label htmlFor="" className="label_field">
                 Email
               </label>
+              {errors.user_email ? (
+                <p className="field_error">{errors.user_email}</p>
+              ) : null}
             </div>
 
             <div className="form_field_group field">
@@ -106,14 +141,36 @@ const Contact = () => {
                 type="text"
                 name="message"
                 onChange={handleChange}
+                onBlur={handleBlurError}
+                value={input.message}
               />
               <label htmlFor="" className="label_field">
                 Message
               </label>
+              {errors.message ? (
+                <p className="field_error">{errors.message}</p>
+              ) : null}
             </div>
-
-            <button className={`form_button ${darkMode && 'darkBtn'}`}>
+             {console.log(!Object.keys(errors).length && !checkProperties(input))}
+            <button
+              className={`
+                form_button 
+                ${darkMode && "darkBtn"} 
+                ${
+                  !Object.keys(errors).length && !checkProperties(input)
+                    ? ""
+                    : "disabled"
+                } 
+              `}
+              disabled={
+                !Object.keys(errors).length && !checkProperties(input)
+                  ? false
+                  : true
+              }
+            >
+              <span>
               Send
+              </span>
               <Send />
             </button>
             {done ? (
