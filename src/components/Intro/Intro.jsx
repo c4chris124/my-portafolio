@@ -45,7 +45,7 @@ const Intro = () => {
         <span className="intro-bg-wrap">
         <div className="intro-bg"></div>
         </span>
-        {/* <img src={imageP} alt="" className="intro-image" /> */}
+        <img src={imageP} alt="" className="intro-image" />
       </div>
     </div>
   );

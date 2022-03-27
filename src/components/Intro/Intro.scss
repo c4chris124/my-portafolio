@@ -88,3 +88,29 @@
     top: 0;
     right: 0;
 }
+
+
+
+@media screen and (max-width: 480px) {
+  .intro-container{
+    flex-direction: column;
+  }
+
+  .intro-left {
+    .intro-left-wrapper {
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+    }
+  }
+
+  .intro-bg{
+    clip-path: circle(60% at 50% 57.5%);
+  }
+
+  .intro-description{
+    display: none;
+  }
+}

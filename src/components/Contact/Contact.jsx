@@ -168,7 +168,9 @@ const Contact = () => {
                   : true
               }
             >
+              <span>
               Send
+              </span>
               <Send />
             </button>
             {done ? (

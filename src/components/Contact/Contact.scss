@@ -169,3 +169,50 @@ form {
 .field_error {
   color: #ff4d50bd;
 }
+
+
+
+@media screen and (max-width: 480px) {
+  .c-wrapper {
+    flex-direction: column;
+    padding: 0px 50px;
+  }
+
+  .c-title{
+    font-size: 30px;
+  }
+
+  .c-info-item{
+    margin: 20px 0px;
+    width: 100%;
+  }
+
+  .c-desc {
+    display: none;
+  }
+
+  form{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form_field_group{
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .form_button{
+    margin-top: 20px;
+    padding: 10px;
+    width: 150px;
+    justify-content: center;
+    
+    span{
+      margin-right: 10px;
+    }
+
+  }
+
+}
