@@ -11,7 +11,7 @@ const About = () => {
         <div className={`about-card bg ${darkMode && "bg-dark"}`}></div>
         <div className="about-card">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/traveladvisor-343201.appspot.com/o/11f5c80b-1251-49c9-ad4f-ab89b193cf17.jpg?alt=media&token=e3bc581a-610f-4520-84b5-c64c7d819e51"
+            src="https://firebasestorage.googleapis.com/v0/b/traveladvisor-343201.appspot.com/o/IMG_PixelCam_Plus_20210418_094137.jpg?alt=media&token=0de10f48-c743-4b5b-8aba-d409f8a5fff2"
             alt=""
             className="about-image"
           />
@@ -31,8 +31,8 @@ const About = () => {
           this, is I did not have all the resources I needed to learn web
           development.
         </p>
-        <div>
-          <span>My Skills</span>
+        <div className="about-container-skills">
+          <span className="skills-title">My Skills</span>
           <nav className="about-skills">
             <SkillsList icon="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" text="JavaScript" />
             <SkillsList icon="https://cdn.worldvectorlogo.com/logos/typescript.svg" text="TypeScript" />
