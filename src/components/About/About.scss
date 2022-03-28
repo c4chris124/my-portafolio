@@ -54,6 +54,9 @@
   border-radius: 80px;
   position: relative;
   overflow: hidden;
+  box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
+  -moz-box-shadow: 1px 7px 21px 4px rgba(0,0,0,0.48);
 
   .about-image{
     width: 100%;
@@ -76,6 +79,7 @@
 
   .about-award-texts {
     width: 70%;
+    margin-left: 10px;
 
     .about-award-title {
         font-weight: bold;
@@ -107,5 +111,20 @@
 
   .about-right{
     padding: 20px;
+  }
+
+  .about-desc{
+    display: none;
+  }
+
+  .about-award{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .about-award-texts{
+    p{
+      display: none;
+    }
   }
 }
