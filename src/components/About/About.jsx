@@ -1,8 +1,7 @@
 import React from "react";
 import "./About.scss";
 import { useSelector } from "react-redux";
-import {List, ListItem, ListItemIcon} from '@mui/material'
-import InboxIcon from '@mui/icons-material/Inbox';
+import SkillsList from "./SkillsList";
 
 const About = () => {
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -23,12 +22,28 @@ const About = () => {
         <p className="about-sub">
           I am a developer seeking for professional growth. I'm really excited
           to be at the deployment phase of my new career as a web developer, I
-          was working in the call center industry, Why I changed industry?, I
+          was working in the call center industry.
+        </p>
+        <p className="about-sub2">
+        Why I changed industry?, I
           have always loved technology, software development, I used the call
           center industry to take the next step in my life, What I meant about
           this, is I did not have all the resources I needed to learn web
           development.
         </p>
+        <div>
+          <span>My Skills</span>
+          <nav className="about-skills">
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" text="JavaScript" />
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/typescript.svg" text="TypeScript" />
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/react-2.svg" text="React JS"/>
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/next-js.svg" text="Next JS" />
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/redux.svg" text="Redux" />
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" text="Node Js" />
+            <SkillsList icon="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" text="Express JS" />
+            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/postgresql.svg" text="PostgreSQL" />
+          </nav>
+        </div>
         <div className="about-award">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/traveladvisor-343201.appspot.com/o/Certifcado%20Henry-1.png?alt=media&token=ff3bcfb0-bc2b-4357-969c-0e0f72c3fb08"
