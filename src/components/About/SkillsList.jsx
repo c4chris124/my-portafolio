@@ -4,7 +4,7 @@ import './About.scss'
 
 const SkillsList = ({icon, text}) => {
   return (
-    <List sx={{margin: '5px'}}>
+    <List>
       <ListItem>
         <ListItemAvatar>
             <Avatar src={icon} variant="rounded"/>
