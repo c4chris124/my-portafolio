@@ -1,6 +1,5 @@
 import React from "react";
-import { List, ListItem, ListItemIcon, ListItemText, ListItemAvatar, Avatar } from "@mui/material";
-import InboxIcon from "@mui/icons-material/Inbox";
+import { List, ListItem, ListItemText, ListItemAvatar, Avatar } from "@mui/material";
 import './About.scss'
 
 const SkillsList = ({icon, text}) => {
