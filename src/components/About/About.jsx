@@ -41,7 +41,6 @@ const About = () => {
             <SkillsList icon="https://cdn.worldvectorlogo.com/logos/redux.svg" text="Redux" />
             <SkillsList icon="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" text="Node Js" />
             <SkillsList icon="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" text="Express JS" />
-            <SkillsList icon="https://cdn.worldvectorlogo.com/logos/postgresql.svg" text="PostgreSQL" />
           </nav>
         </div>
         <div className="about-award">
