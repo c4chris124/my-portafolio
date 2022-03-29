@@ -151,7 +151,6 @@ const Contact = () => {
                 <p className="field_error">{errors.message}</p>
               ) : null}
             </div>
-             {console.log(!Object.keys(errors).length && !checkProperties(input))}
             <button
               className={`
                 form_button 
