@@ -89,7 +89,6 @@
 }
 
 .about-container-skills {
-
   .skills-title {
     margin-top: 10px;
     font-size: 22px;
@@ -142,16 +141,20 @@
     display: flex;
     flex-direction: column-reverse;
     margin: 5px;
-  }
 
-  .about-award-texts {
-    p {
-      display: none;
+    .about-award-img {
+      width: 150px;
     }
-  }
 
-  .about-award-title{
-    font-size: 11px;
+    .about-award-texts {
+      .about-award-title {
+        font-size: 11px;
+      }
+
+      p {
+        display: none;
+      }
+    }
   }
 
   .MuiList-root {
