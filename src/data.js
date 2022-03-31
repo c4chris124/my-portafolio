@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/traveladvisor-343201.appspot.com/o/edited-min.png?alt=media&token=7dd8a515-7936-485f-ac33-5f0c39bc7eb6",
-    link: "https://github.com/c4chris124/PI-Videogames-main",
+    link: "https://effulgent-trifle-096edf.netlify.app/",
   },
   {
     id: 2,
